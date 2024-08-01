@@ -5,22 +5,22 @@
     <div>
         <table style="width: 100%;">
             <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
+                <td>&nbsp;Name of Item 1</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
             </tr>
             <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
+                <td>Picture of item 1</td>
+                <td>
+                    <asp:DropDownList ID="ddlQuantity" runat="server"></asp:DropDownList></td>
+                <td>&nbsp;</td>
             </tr>
             <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
             </tr>
         </table>
-
 
     </div>
 
