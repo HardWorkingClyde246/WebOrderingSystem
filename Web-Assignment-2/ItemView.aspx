@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Catalogue.aspx.cs" Inherits="Web_Assignment_2.Catalogue" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ItemView.aspx.cs" Inherits="Web_Assignment_2.Catalogue" %>
 
 <asp:Content ID="conten1"  ContentPlaceHolderID="ContentPlaceHolder1"  runat="server">
 
