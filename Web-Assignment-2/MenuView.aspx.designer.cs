@@ -15,6 +15,24 @@ namespace Web_Assignment_2
     {
 
         /// <summary>
+        /// GridViewCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewCategory;
+
+        /// <summary>
+        /// CatData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource CatData;
+
+        /// <summary>
         /// dlFood control.
         /// </summary>
         /// <remarks>
