@@ -15,30 +15,21 @@ namespace Web_Assignment_2
     {
 
         /// <summary>
-        /// btnSelect1 control.
+        /// dlFood control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSelect1;
+        protected global::System.Web.UI.WebControls.DataList dlFood;
 
         /// <summary>
-        /// btnSelect2 control.
+        /// FoodData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSelect2;
-
-        /// <summary>
-        /// btnSelect3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSelect3;
+        protected global::System.Web.UI.WebControls.SqlDataSource FoodData;
     }
 }
