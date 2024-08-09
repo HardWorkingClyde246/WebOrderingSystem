@@ -12,28 +12,31 @@
         </asp:GridView>
 
         <asp:SqlDataSource ID="CatData" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionStringA %>" SelectCommand="SELECT CategoryID, [CategoryName] FROM [Category]"></asp:SqlDataSource>
-
+        
     </div>
 
         <div> 
-                
+            <asp:Repeater ID="RepeaterFoodList" runat="server" DataSourceID="FoodData" OnItemCommand="RepeaterFoodList_ItemCommand">
+
+                <ItemTemplate>
+                    <asp:Label ID="FoodLabel" runat="server" Text='<%# Eval("FoodLabel") %>' ></asp:Label>
+                   
+                    <br />
+                    <asp:Label ID="FoodDescription" runat="server" Text='<%# Eval("FoodDescription") %>' ></asp:Label>
+
+
+                    <br />
+                    <asp:Label ID="Price" runat="server" Text='<%# Eval("Price") %>' ></asp:Label>
+                    <br />
+                    <asp:Button ID="btnSelect" runat="server" Text="Select" />
+                    <br />
+                </ItemTemplate>
+
+
+            </asp:Repeater>
         
 
-        <asp:DataList ID="dlFood" runat="server" DataSourceID="FoodData" HorizontalAlign="Right" RepeatColumns="5">
-            <ItemTemplate>
-                Food Label:
-                <asp:Label ID="Food_LabelLabel" runat="server" Text='<%# Eval("[Food Label]") %>' />
-                <br />
-                FoodDescription:
-                <asp:Label ID="FoodDescriptionLabel" runat="server" Text='<%# Eval("FoodDescription") %>' />
-                <br />
-                Price:
-                <asp:Label ID="PriceLabel" runat="server" Text='<%# Eval("Price") %>' />
-                <br />
-<br />
-            </ItemTemplate>
-        </asp:DataList>
-        <asp:SqlDataSource ID="FoodData" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionStringA %>" SelectCommand="SELECT Food.[Food Label], Food.FoodDescription, Food.Price FROM Category INNER JOIN Food ON Category.CategoryID = Food.CategoryID
+        <asp:SqlDataSource ID="FoodData" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionStringA %>" SelectCommand="SELECT Food.[FoodLabel], Food.FoodDescription, Food.Price FROM Category INNER JOIN Food ON Category.CategoryID = Food.CategoryID
 WHERE Food.CategoryID = @catID">
             <SelectParameters>
                 <asp:ControlParameter ControlID="GridViewCategory" DefaultValue="1" Name="catID" PropertyName="SelectedValue" />
