@@ -17,7 +17,7 @@
                     <asp:Label ID="lblFoodDesc" runat="server" Text="Label"></asp:Label>
                 </td>
                 <td>
-                    <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:DropDownList ID="ddlQuantity" runat="server">
                         <asp:ListItem>1</asp:ListItem>
                         <asp:ListItem>2</asp:ListItem>
                         <asp:ListItem>3</asp:ListItem>
@@ -36,7 +36,7 @@
                     <asp:Label ID="lblFoodPrice" runat="server" Text="Label"></asp:Label>
                 </td>
                 <td>
-                    <asp:Button ID="Button1" runat="server" Text="Button" />
+                    <asp:Button ID="btnAdd" runat="server" Text="Add To Cart" OnClick="Button1_Click" />
                 </td>
             </tr>
         </table>
