@@ -74,6 +74,9 @@ namespace Web_Assignment_2
             
             int quantity =Int32.Parse(ddlQuantity.SelectedValue.ToString());
 
+            
+
+
             SqlCommand cmdInsrt;
             string strInsrt = "Insert into Orders values (1," + foodID + ", 1, " + quantity + "," + foodPrice + ",0)";
 

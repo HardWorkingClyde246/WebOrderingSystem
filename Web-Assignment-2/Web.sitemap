@@ -3,7 +3,7 @@
 	
 	<siteMapNode url="~/MenuView.aspx" title="MenuView"  description="">
     <siteMapNode url="~/ItemView.aspx" title="ItemView"  description="" />
-    <siteMapNode url="~/CartView" title="CartView"  description="" />
+    <siteMapNode url="~/CartView.aspx" title="CartView"  description="" />
 	  
   </siteMapNode>
 </siteMap>
