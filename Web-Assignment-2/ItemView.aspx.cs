@@ -13,7 +13,7 @@ namespace Web_Assignment_2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!IsPostBack) //display Selected Food Details
             {
                 SqlConnection con;
                 string constr = ConfigurationManager.ConnectionStrings["ConnectionStringA"].ConnectionString;
@@ -46,13 +46,15 @@ namespace Web_Assignment_2
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e) //add selected food to cart
         {
 
             SqlConnection con;
             string constr = ConfigurationManager.ConnectionStrings["ConnectionStringA"].ConnectionString;
             con = new SqlConnection(constr);
             con.Open();
+            
+
 
             int foodID = (int)Session["food"];
             string strGetFoodName = "Select FoodLabel From Food Where FoodID =" + foodID;
@@ -74,11 +76,16 @@ namespace Web_Assignment_2
             
             int quantity =Int32.Parse(ddlQuantity.SelectedValue.ToString());
 
-            
+            int orderID;
 
+            SqlCommand cmdRtr4;
+            string strGetLastOrderID = "SELECT TOP 1 OrderID\r\nFROM Orders\r\nORDER BY OrderID DESC;";
+            cmdRtr4 = new SqlCommand(strGetLastOrderID, con);
+            orderID =Int32.Parse( cmdRtr4.ExecuteScalar().ToString()) ;
+            if (orderID == 0) { orderID = 1; }
 
             SqlCommand cmdInsrt;
-            string strInsrt = "Insert into Orders values (1," + foodID + ", 1, " + quantity + "," + foodPrice + ",0)";
+            string strInsrt = "Insert into Orders values (" +(orderID+1) +" ," + foodID + ", 1, " + quantity + "," + foodPrice + ",0)";
 
             cmdInsrt = new SqlCommand(strInsrt, con);
 
