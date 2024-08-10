@@ -28,7 +28,7 @@
                     <br />
                     <asp:Label ID="Price" runat="server" Text='<%# Eval("Price") %>' ></asp:Label>
                     <br />
-                    <asp:Button ID="btnSelect" runat="server" Text="Select" OnClick="Selected"/>
+                    <asp:Button ID="btnSelect" runat="server" Text="Select" OnClick="Selected"  />
                     <br />
                 </ItemTemplate>
 

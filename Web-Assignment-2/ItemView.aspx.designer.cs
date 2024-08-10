@@ -15,22 +15,22 @@ namespace Web_Assignment_2
     {
 
         /// <summary>
-        /// Label1 control.
+        /// lblFoodName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lblFoodName;
 
         /// <summary>
-        /// Label2 control.
+        /// lblFoodDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label lblFoodDesc;
 
         /// <summary>
         /// DropDownList1 control.
@@ -42,13 +42,13 @@ namespace Web_Assignment_2
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
 
         /// <summary>
-        /// Label3 control.
+        /// lblFoodPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label lblFoodPrice;
 
         /// <summary>
         /// Button1 control.
