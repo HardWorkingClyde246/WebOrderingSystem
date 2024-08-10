@@ -69,6 +69,7 @@
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <Content Include="CartView.aspx" />
+    <Content Include="Home.aspx" />
     <Content Include="ItemView.aspx" />
     <Content Include="Web.config" />
     <Content Include="MenuView.aspx" />
@@ -80,6 +81,13 @@
     </Compile>
     <Compile Include="CartView.aspx.designer.cs">
       <DependentUpon>CartView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="ItemView.aspx.cs">
       <DependentUpon>ItemView.aspx</DependentUpon>

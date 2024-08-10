@@ -48,13 +48,17 @@ namespace Web_Assignment_2
 
         protected void Button1_Click(object sender, EventArgs e) //add selected food to cart
         {
-
             SqlConnection con;
             string constr = ConfigurationManager.ConnectionStrings["ConnectionStringA"].ConnectionString;
             con = new SqlConnection(constr);
             con.Open();
-            
 
+
+
+
+            int orderID = (int)Session["ssOrderID"];
+
+            float tprice = 0; //totalprice
 
             int foodID = (int)Session["food"];
             string strGetFoodName = "Select FoodLabel From Food Where FoodID =" + foodID;
@@ -75,21 +79,27 @@ namespace Web_Assignment_2
             string foodPrice = cmdRtr3.ExecuteScalar().ToString();
             
             int quantity =Int32.Parse(ddlQuantity.SelectedValue.ToString());
+            int customerID = 1;
+             
+            float discount = 0;
 
-            int orderID;
+          
 
-            SqlCommand cmdRtr4;
-            string strGetLastOrderID = "SELECT TOP 1 OrderID\r\nFROM Orders\r\nORDER BY OrderID DESC;";
-            cmdRtr4 = new SqlCommand(strGetLastOrderID, con);
-            orderID =Int32.Parse( cmdRtr4.ExecuteScalar().ToString()) ;
-            if (orderID == 0) { orderID = 1; }
+            SqlCommand cmdInsrt1; //insert into order table
+            string strInsrt = "Insert into Orders values (" +orderID + " ,"+ customerID +", " +discount +")";
 
-            SqlCommand cmdInsrt;
-            string strInsrt = "Insert into Orders values (" +(orderID+1) +" ," + foodID + ", 1, " + quantity + "," + foodPrice + ",0)";
+            cmdInsrt1 = new SqlCommand(strInsrt, con);
 
-            cmdInsrt = new SqlCommand(strInsrt, con);
+            cmdInsrt1.ExecuteNonQuery();
 
-            cmdInsrt.ExecuteNonQuery();
+
+            SqlCommand cmdInsrt2; //insert into orderdetails table
+            string strInsrt2 = "Insert into OrderDetails values (" +orderID +","+foodID+","+quantity+")";
+
+            cmdInsrt2 = new SqlCommand(strInsrt2, con);
+
+            cmdInsrt2.ExecuteNonQuery();
+
 
             con.Close();
         }

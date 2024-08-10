@@ -5,41 +5,31 @@
 <asp:Content ID="conten1"  ContentPlaceHolderID="ContentPlaceHolder1"  runat="server">
 
     <div>
-        <table class="auto-style1">
-            <tr>
-                <td class="auto-style2">Food name</td>
-                <td><asp:Label ID="lblFoodLabel" runat="server" Text="Label"></asp:Label></td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">Quantity</td>
-                <td><asp:Label ID="lblQuantity" runat="server" Text="Label"></asp:Label></td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">Price</td>
-                <td><asp:Label ID="lblFoodPrice" runat="server" Text="Label"></asp:Label></td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">Total Price</td>
-                <td>&nbsp;</td>
-                <td> <asp:Label ID="lblTotalPrice" runat="server" Text="Label"></asp:Label></td>
-            </tr>
-        </table>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceOrders">
+            <Columns>
+                <asp:BoundField DataField="ItemName" HeaderText="ItemName" SortExpression="ItemName" />
+                <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
+                <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
+            </Columns>
+        </asp:GridView>
+        
+    
+        <asp:SqlDataSource ID="SqlDataSourceOrders" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionStringA %>" SelectCommand="select Food.FoodLabel as ItemName, Food.Price, OrderDetails.Quantity
+from OrderDetails
+join Food on Food.FoodID = OrderDetails.FoodID
+where OrderDetails.OrderID = @oid">
+            <SelectParameters>
+                <asp:SessionParameter DefaultValue="" Name="oid" SessionField="ssOrderID" />
+            </SelectParameters>
+        </asp:SqlDataSource>
         
     
     </div>
 
+    <div>
+        <asp:Label ID="lblTotalPrice" runat="server" Text=""></asp:Label>
+    </div>
+
 </asp:Content>
-<asp:Content ID="Content1" runat="server" contentplaceholderid="head">
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-        .auto-style2 {
-            width: 148px;
-        }
-    </style>
-</asp:Content>
+
 
