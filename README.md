@@ -1,3 +1,5 @@
+Git tutorial for VisualStudio https://www.youtube.com/watch?v=oCvb-Q5lXb8
+
 If found NuGet error please watch https://www.youtube.com/watch?v=bYKymAixguA
 
 IF git commit fatal error because of database .mdf file :
