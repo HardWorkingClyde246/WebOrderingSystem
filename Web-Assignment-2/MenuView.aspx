@@ -28,7 +28,7 @@
                     <br />
                     <asp:Label ID="Price" runat="server" Text='<%# Eval("Price") %>' ></asp:Label>
                     <br />
-                    <asp:Button ID="btnSelect" runat="server" Text="Select" />
+                    <asp:Button ID="btnSelect" runat="server" Text="Select" OnClick="Selected"/>
                     <br />
                 </ItemTemplate>
 
@@ -48,7 +48,7 @@ WHERE Food.CategoryID = @catID">
 
 
 
-
+            <asp:Label ID="lblTest" runat="server" Text=""></asp:Label>
         </div>
   
 
