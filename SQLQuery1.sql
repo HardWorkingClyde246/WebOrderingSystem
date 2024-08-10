@@ -1,2 +1,3 @@
-﻿Insert into Orders
-values (1,1,1,1,20,0)
+﻿SELECT TOP 1 OrderID
+FROM Orders
+ORDER BY OrderID DESC;
