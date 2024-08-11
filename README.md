@@ -21,3 +21,5 @@ Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
 -> enter
 
 https://stackoverflow.com/questions/32780315/could-not-find-a-part-of-the-path-bin-roslyn-csc-exe
+
+RED: https://app.diagrams.net/#G1MqK_CE9L1V5PjRTUCK-yFULoYj4EJJ5e#%7B%22pageId%22%3A%22irEn_Mr17YhDBCFMWUoT%22%7D
