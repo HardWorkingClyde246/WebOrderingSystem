@@ -1,51 +1,61 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="Web_Assignment_2.Registration" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master"  AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="Web_Assignment_2.Registration" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Registration</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
 
-        .registration-container {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            position: relative;
-        }
 
-        .back-button {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-        .auto-style1 {
-            position: absolute;
-            top: 4px;
-            left: 22px;
-            width: 44px;
-            height: 17px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div class="registration-container">
+   
+
+<asp:Content ID="conten1"  ContentPlaceHolderID="ContentPlaceHolder1"  runat="server">
+     <style>
+     body {
+         font-family: Arial, sans-serif;
+         background-color: #f4f4f4;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+         margin: 0;
+     }
+
+     .registration-container {
+         background-color: #ffffff;
+         padding: 20px;
+         border-radius: 5px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         text-align: center;
+         position: relative;
+     }
+
+     .back-button {
+         position: absolute;
+         top: 10px;
+         left: 10px;
+     }
+     .auto-style1 {
+         position: absolute;
+         top: 4px;
+         left: 22px;
+         width: 44px;
+         height: 17px;
+     }
+         .auto-style4 {
+             background-color: #ffffff;
+             padding: 20px;
+             border-radius: 5px;
+             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+             text-align: center;
+             position: relative;
+             left: 0px;
+             top: 0px;
+             width: 1068px;
+         }
+ </style>
+
+        <div class="auto-style4">
             <asp:Button ID="Button1" runat="server" PostBackUrl="~/Login.aspx" Text="Back" OnClick="Button1_Click" CssClass="auto-style1" />
             <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" ContinueDestinationPageUrl="~/Login.aspx" 
                 BackColor="#EFF3FB" BorderColor="#B5C7DE" BorderStyle="Solid" BorderWidth="1px" 
-                Font-Names="Verdana" Font-Size="0.8em">
+                Font-Names="Verdana" Font-Size="0.8em" Width="545px">
                 
                 <ContinueButtonStyle BackColor="White" BorderColor="#507CD1" BorderStyle="Solid" 
                     BorderWidth="1px" Font-Names="Verdana" ForeColor="#284E98" />
@@ -67,6 +77,5 @@
                 <StepStyle Font-Size="0.8em" />
             </asp:CreateUserWizard>
         </div>
-    </form>
-</body>
-</html>
+
+    </asp:Content>
