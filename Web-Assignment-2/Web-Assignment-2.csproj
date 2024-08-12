@@ -71,6 +71,8 @@
     <Content Include="CartView.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="ItemView.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Registration.aspx" />
     <Content Include="Web.config" />
     <Content Include="MenuView.aspx" />
   </ItemGroup>
@@ -96,7 +98,21 @@
     <Compile Include="ItemView.aspx.designer.cs">
       <DependentUpon>ItemView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
