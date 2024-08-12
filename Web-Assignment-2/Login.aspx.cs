@@ -16,5 +16,10 @@ namespace Web_Assignment_2
         {
 
         }
+
+        protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
+        {
+
+        }
     }
 }
