@@ -5,7 +5,7 @@
 <asp:Content ID="conten1"  ContentPlaceHolderID="ContentPlaceHolder1"  runat="server">
 
     <div>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceOrders">
+        <asp:GridView ID="GridViewCart" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceOrders">
             <Columns>
                 <asp:BoundField DataField="ItemName" HeaderText="ItemName" SortExpression="ItemName" />
                 <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
@@ -14,9 +14,9 @@
         </asp:GridView>
         
     
-        <asp:SqlDataSource ID="SqlDataSourceOrders" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionStringA %>" SelectCommand="select Food.FoodLabel as ItemName, Food.Price, OrderDetails.Quantity
+        <asp:SqlDataSource ID="SqlDataSourceOrders" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionStringA %>" SelectCommand="select MenuItem.MenuItemLabel as ItemName, MenuItem.Price, OrderDetails.Quantity
 from OrderDetails
-join Food on Food.FoodID = OrderDetails.FoodID
+join MenuItem on MenuItem.MenuItemID = OrderDetails.MenuItemID
 where OrderDetails.OrderID = @oid">
             <SelectParameters>
                 <asp:SessionParameter DefaultValue="" Name="oid" SessionField="ssOrderID" />
