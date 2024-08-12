@@ -72,10 +72,14 @@
             </table>
             </div>
 
-        <div class="footer">
-        <h2>Contact Us:</h2>
-        </div>
-        </div>
-    </form>
-    </body>
+ <div class="footer">
+  <h2>Contact Us: Wine O'Clock
+      <asp:Image ID="Image4" runat="server" Height="28px" ImageUrl="~/Image/facebook.png" Width="33px" />
+      <asp:Image ID="Image5" runat="server" Height="28px" ImageUrl="~/Image/twitter.png" Width="33px" />
+      <asp:Image ID="Image6" runat="server" Height="28px" ImageUrl="~/Image/instagram.png" Width="33px" />
+  </h2>
+ </div>
+ </div>
+</form>
+</body>
 </html>
