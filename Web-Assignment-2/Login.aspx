@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Web_Assignment_2.Login" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Web_Assignment_2.Login" %>
 
 <!DOCTYPE html>
 
@@ -6,9 +6,12 @@
 <head runat="server">
 <title>Login</title>
     <style>
-        body {
+ body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-image: url('img/bg.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat; 
+            background-position: center center; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -31,7 +34,7 @@
             <asp:Login ID="Login2" runat="server" DestinationPageUrl="~/Home.aspx" 
                 BackColor="#EFF3FB" BorderColor="#B5C7DE" BorderPadding="4" 
                 BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" 
-                Font-Size="0.8em" ForeColor="#333333" Height="142px" Width="313px">
+                Font-Size="Medium" ForeColor="#333333" Height="179px" Width="381px">
                 
                 <InstructionTextStyle Font-Italic="True" ForeColor="Black" />
                 <LoginButtonStyle BackColor="White" BorderColor="#507CD1" BorderStyle="Solid" 
