@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="Web_Assignment_2.Registration" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="Web_Assignment_2.Registration" %>
 
 <!DOCTYPE html>
 
@@ -8,7 +8,10 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-image: url('img/bg.jpg');
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-position: center center; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -45,7 +48,7 @@
             <asp:Button ID="Button1" runat="server" PostBackUrl="~/Login.aspx" Text="Back" OnClick="Button1_Click" CssClass="auto-style1" />
             <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" ContinueDestinationPageUrl="~/Login.aspx" 
                 BackColor="#EFF3FB" BorderColor="#B5C7DE" BorderStyle="Solid" BorderWidth="1px" 
-                Font-Names="Verdana" Font-Size="0.8em">
+                Font-Names="Verdana" Font-Size="Medium" Height="313px" Width="395px">
                 
                 <ContinueButtonStyle BackColor="White" BorderColor="#507CD1" BorderStyle="Solid" 
                     BorderWidth="1px" Font-Names="Verdana" ForeColor="#284E98" />
