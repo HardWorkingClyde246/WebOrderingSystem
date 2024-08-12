@@ -5,7 +5,8 @@
 
     <div>
         <asp:Button ID="btnViewMenu" runat="server" Text="View Menu" PostBackUrl="~/MenuView.aspx" />
-
+        <asp:Button ID="btnRegister" runat="server" Text="Register" PostBackUrl="~/Registration.aspx"/>
+        <asp:Button ID="btnLogin" runat="server" Text="Login" PostBackUrl="~/Login.aspx"/>
     </div>
 
 </asp:Content>

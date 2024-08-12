@@ -19,10 +19,10 @@
             <asp:Repeater ID="RepeaterFoodList" runat="server" DataSourceID="FoodData" OnItemCommand="RepeaterFoodList_ItemCommand">
 
                 <ItemTemplate>
-                    <asp:Label ID="FoodLabel" runat="server" Text='<%# Eval("FoodLabel") %>' ></asp:Label>
+                    <asp:Label ID="FoodLabel" runat="server" Text='<%# Eval("MenuItemLabel") %>' ></asp:Label>
                    
                     <br />
-                    <asp:Label ID="FoodDescription" runat="server" Text='<%# Eval("FoodDescription") %>' ></asp:Label>
+                    <asp:Label ID="FoodDescription" runat="server" Text='<%# Eval("MenuItemDescription") %>' ></asp:Label>
 
 
                     <br />
@@ -36,8 +36,9 @@
             </asp:Repeater>
         
 
-        <asp:SqlDataSource ID="FoodData" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionStringA %>" SelectCommand="SELECT Food.[FoodLabel], Food.FoodDescription, Food.Price FROM Category INNER JOIN Food ON Category.CategoryID = Food.CategoryID
-WHERE Food.CategoryID = @catID">
+        <asp:SqlDataSource ID="FoodData" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionStringA %>" SelectCommand="SELECT MenuItem.[MenuItemLabel], MenuItem.MenuItemDescription, MenuItem.Price 
+FROM Category INNER JOIN MenuItem ON Category.CategoryID = MenuItem.CategoryID
+WHERE MenuItem.CategoryID = @catID">
             <SelectParameters>
                 <asp:ControlParameter ControlID="GridViewCategory" DefaultValue="1" Name="catID" PropertyName="SelectedValue" />
             </SelectParameters>

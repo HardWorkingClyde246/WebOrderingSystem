@@ -20,20 +20,21 @@ namespace Web_Assignment_2
                 con = new SqlConnection(constr);
                 con.Open();
 
-                int foodID = (int)Session["food"];
-                string strGetFoodName = "Select FoodLabel From Food Where FoodID =" + foodID;
+                // int foodID = (int)Session["food"];
+                int foodID = 1;
+                string strGetFoodName = "Select MenuItemLabel From MenuItem Where MenuItemID =" + foodID;
                 SqlCommand cmdRtr;
                 cmdRtr = new SqlCommand(strGetFoodName, con);
                 string foodName = cmdRtr.ExecuteScalar().ToString();
                 lblFoodName.Text = foodName;
 
-                string strGetFoodDesc = "Select FoodDescription From Food Where FoodID =" + foodID;
+                string strGetFoodDesc = "Select MenuItemDescription From MenuItem Where MenuItemID =" + foodID;
                 
                 cmdRtr = new SqlCommand(strGetFoodDesc, con);
                 string foodDesc = cmdRtr.ExecuteScalar().ToString();
                 lblFoodDesc.Text = foodDesc;
 
-                string strGetFoodPrice = "Select Price From Food Where FoodID =" + foodID;
+                string strGetFoodPrice = "Select Price From MenuItem Where MenuItemID =" + foodID;
 
                 cmdRtr = new SqlCommand(strGetFoodPrice, con);
                 string foodPrice = cmdRtr.ExecuteScalar().ToString();

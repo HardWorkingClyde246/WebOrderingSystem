@@ -5,18 +5,18 @@
     <div>
         <table style="width: 100%;">
             <tr>
-                <td class="auto-style1">Food Name:</td>
-                <td class="auto-style2">
+                <td class="auto-style11">Food Name:</td>
+                <td class="auto-style12">
                     <asp:Label ID="lblFoodName" runat="server" Text="Label"></asp:Label>
                 </td>
-                <td>&nbsp;</td>
+                <td class="auto-style13"></td>
             </tr>
             <tr>
-                <td class="auto-style1">Food Description</td>
-                <td class="auto-style2">
+                <td class="auto-style8">Food Description</td>
+                <td class="auto-style9">
                     <asp:Label ID="lblFoodDesc" runat="server" Text="Label"></asp:Label>
                 </td>
-                <td>
+                <td class="auto-style10">
                     <asp:DropDownList ID="ddlQuantity" runat="server">
                         <asp:ListItem>1</asp:ListItem>
                         <asp:ListItem>2</asp:ListItem>
@@ -31,8 +31,8 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style1">Price</td>
-                <td class="auto-style2">
+                <td class="auto-style6">Price</td>
+                <td class="auto-style7">
                     <asp:Label ID="lblFoodPrice" runat="server" Text="Label"></asp:Label>
                 </td>
                 <td>
@@ -53,6 +53,34 @@
         }
         .auto-style2 {
             width: 769px;
+        }
+        .auto-style6 {
+            width: 20%;
+        }
+        .auto-style7 {
+            width: 62%;
+        }
+        .auto-style8 {
+            width: 20%;
+            height: 158px;
+        }
+        .auto-style9 {
+            width: 62%;
+            height: 158px;
+        }
+        .auto-style10 {
+            height: 158px;
+        }
+        .auto-style11 {
+            width: 20%;
+            height: 35px;
+        }
+        .auto-style12 {
+            width: 62%;
+            height: 35px;
+        }
+        .auto-style13 {
+            height: 35px;
         }
     </style>
 </asp:Content>
