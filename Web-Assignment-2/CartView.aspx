@@ -28,6 +28,7 @@ where OrderDetails.OrderID = @oid">
 
     <div>
         <asp:Label ID="lblTotalPrice" runat="server" Text=""></asp:Label>
+        <asp:Button ID="btnPay" runat="server" Text="Pay now" PostbackUrl="~/Payment.aspx"/>
     </div>
 
 </asp:Content>
