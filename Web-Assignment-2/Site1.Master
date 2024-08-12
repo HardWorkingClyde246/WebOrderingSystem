@@ -1,40 +1,53 @@
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Web_Assignment_2.Site1" %>
 
+<!DOCTYPE html>
 
-namespace Web_Assignment_2
-{
-    public partial class CartView : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            if (!IsPostBack)
-            {
-                SqlConnection con;
-                string constr = ConfigurationManager.ConnectionStrings["ConnectionStringA"].ConnectionString;
-                con = new SqlConnection(constr);
-                con.Open();
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="wrapper">
+            <div class="menu">
+                <ul>
+                    <li><a href="Home.aspx">Home Page</a></li>
+                    <li><a href="MenuView.aspx">Menu</a></li>
+                    <li><a href="ItemView.aspx">Item</a></li>
+                    <li><a href="CartView.aspx">Cart</a></li>
+                </ul>
+        </div>
+        <div>
+           
+            <table style="width: 100%; background-color: white;">
+                <tr>
+                    <td colspan="2" style="text-align:center;">Food Ordering System</td>
+                    
+                </tr>
+                <tr>
+                    <td colspan="2" >
+                        <asp:SiteMapPath runat="server"></asp:SiteMapPath>
+                    </td>
+                    
+                    
+                </tr>
+                <tr>
+                    <td style="width: 200px;">
+                        <asp:Menu runat="server" DataSourceID="SiteMapDataSource1" ID="menu1"></asp:Menu>
+                        <asp:SiteMapDataSource runat="server" ID="SiteMapDataSource1"></asp:SiteMapDataSource>
+                    </td>
+                    <td>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder> </td>
+                   
+                </tr>
+            </table>
 
-                int orderID = (int)Session["ssOrderID"];
-                string strGetTotalPrice =" select(Food.Price * OrderDetails.Quantity)As TotalSales from OrderDetails join Food on Food.FoodID = OrderDetails.FoodID where OrderDetails.OrderID = " + orderID;
-                SqlCommand cmdRtr1;
-                cmdRtr1 = new SqlCommand(strGetTotalPrice, con);
-                string totalPrice = cmdRtr1.ExecuteScalar().ToString();
-                lblTotalPrice.Text = "Subtotal = "+ totalPrice;
-
-               
-
-
-                con.Close();
-
-            }
-
-        }
-    }
-}
+        </div>
+    </form>
+    <div class="footer">
+        <h2>test</h2>
+    </div>
+</body>
+</html>
