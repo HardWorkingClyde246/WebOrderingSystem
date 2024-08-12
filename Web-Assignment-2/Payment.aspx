@@ -1,6 +1,14 @@
 ﻿<%@ Page Language="C#" %>
 
 <!DOCTYPE html>
+<script runat="server">
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+</script>
+
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta charset="utf-8" />
@@ -29,6 +37,27 @@
         }
         .auto-style7 {
             height: 20px;
+        }
+        .auto-style8 {
+            height: 18px;
+            width: 313px;
+        }
+        .auto-style9 {
+            height: 18px;
+        }
+        .auto-style10 {
+            width: 313px;
+            height: 164px;
+        }
+        .auto-style11 {
+            height: 164px;
+        }
+        .auto-style12 {
+            height: 19px;
+            width: 313px;
+        }
+        .auto-style13 {
+            height: 19px;
         }
     </style>
 </head>
@@ -66,9 +95,6 @@
                     Delivery:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Label ID="Deliverylbl" runat="server"></asp:Label>
                     <br />
-                    Discount:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -
-                    <asp:Label ID="PaymentDiscountlbl" runat="server"></asp:Label>
-                    <br />
                     ____________________________________________<br />
                     Total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RM
                     <asp:Label ID="PaymentTotallbl" runat="server"></asp:Label>
@@ -100,11 +126,11 @@
                 <td class="auto-style5">&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style4">
+                <td class="auto-style8">
                     <asp:Label ID="PaymentPersonallbl" runat="server"></asp:Label>
                     </td>
-                <td class="auto-style5">&nbsp;</td>
-                <td class="auto-style5">&nbsp;</td>
+                <td class="auto-style9"></td>
+                <td class="auto-style9"></td>
             </tr>
             <tr>
                 <td class="auto-style4">
@@ -120,15 +146,108 @@
                 <td class="auto-style5">&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style6"></td>
+                <td class="auto-style6">Payment</td>
                 <td class="auto-style7">
                 </td>
                 <td class="auto-style7"></td>
             </tr>
             <tr>
-                <td class="auto-style4">&nbsp;</td>
-                <td class="auto-style5">&nbsp;</td>
-                <td class="auto-style5">&nbsp;</td>
+                <td class="auto-style12">
+                    <asp:RadioButtonList ID="RadioButtonList1" runat="server">
+                        <asp:ListItem Value="tng">Touch N Go eWallet</asp:ListItem>
+                        <asp:ListItem Value="online">Online Banking</asp:ListItem>
+                        <asp:ListItem Value="cashOn">Cash On Delivery</asp:ListItem>
+                    </asp:RadioButtonList>
+                </td>
+                <td class="auto-style13"></td>
+                <td class="auto-style13"></td>
+            </tr>
+            <tr>
+                <td class="auto-style6">
+                    <asp:Button ID="PaymentPlaceOrdbtn" runat="server" Text="Place order" />
+                </td>
+                <td class="auto-style7"></td>
+                <td class="auto-style7"></td>
+            </tr>
+            <tr>
+                <td class="auto-style6"></td>
+                <td class="auto-style7"></td>
+                <td class="auto-style7"></td>
+            </tr>
+            <tr>
+                <td class="auto-style6">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style6"></td>
+                <td class="auto-style7"></td>
+                <td class="auto-style7"></td>
+            </tr>
+            <tr>
+                <td class="auto-style12"></td>
+                <td class="auto-style13"></td>
+                <td class="auto-style13"></td>
+            </tr>
+            <tr>
+                <td class="auto-style6">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style6">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style6">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style6">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style10"></td>
+                <td class="auto-style11"></td>
+                <td class="auto-style11"></td>
+            </tr>
+            <tr>
+                <td class="auto-style6">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style6">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style6">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style6">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style6">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style6">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style6">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
+                <td class="auto-style7">&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style4">&nbsp;</td>
