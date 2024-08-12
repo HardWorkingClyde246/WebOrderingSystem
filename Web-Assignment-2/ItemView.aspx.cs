@@ -57,37 +57,38 @@ namespace Web_Assignment_2
 
 
 
-            int orderID = (int)Session["ssOrderID"];
+            // int orderID = (int)Session["ssOrderID"];
+            int orderID = 1; //testing stub
 
-            float tprice = 0; //totalprice
 
-            int foodID = (int)Session["food"];
-            string strGetFoodName = "Select FoodLabel From Food Where FoodID =" + foodID;
+            // int foodID = (int)Session["food"];
+            int foodID = 1;// testing stub
+            string strGetFoodName = "Select MenuItemLabel From MenuItem Where MenuItemID =" + foodID;
             SqlCommand cmdRtr1;
             cmdRtr1 = new SqlCommand(strGetFoodName, con);
             string foodName = cmdRtr1.ExecuteScalar().ToString();
 
             SqlCommand cmdRtr2;
-            string strGetFoodDesc = "Select FoodDescription From Food Where FoodID =" + foodID;
+            string strGetFoodDesc = "Select MenuItemDescription From MenuItem Where MenuItemID =" + foodID;
 
             cmdRtr2 = new SqlCommand(strGetFoodDesc, con);
             string foodDesc = cmdRtr2.ExecuteScalar().ToString();
             
 
-            string strGetFoodPrice = "Select Price From Food Where FoodID =" + foodID;
+            string strGetFoodPrice = "Select Price From MenuItem Where MenuItemID =" + foodID;
             SqlCommand cmdRtr3;
             cmdRtr3 = new SqlCommand(strGetFoodPrice, con);
             string foodPrice = cmdRtr3.ExecuteScalar().ToString();
             
             int quantity =Int32.Parse(ddlQuantity.SelectedValue.ToString());
-            int customerID = 1;
-             
+            int customerID = 1; // testing stub
+            
             float discount = 0;
 
           
 
             SqlCommand cmdInsrt1; //insert into order table
-            string strInsrt = "Insert into Orders values (" +orderID + " ,"+ customerID +", " +discount +")";
+            string strInsrt = "Insert into Orders values (" +orderID + " ,"+ customerID +", " +discount +" ,NULL )";
 
             cmdInsrt1 = new SqlCommand(strInsrt, con);
 
