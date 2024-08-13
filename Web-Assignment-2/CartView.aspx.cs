@@ -53,5 +53,10 @@ namespace Web_Assignment_2
             }
 
         }
+
+        protected void OrderCheckoutbtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Payment.aspx");
+        }
     }
 }

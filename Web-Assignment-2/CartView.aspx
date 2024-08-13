@@ -26,6 +26,13 @@
                 <td>&nbsp;</td>
                 <td> <asp:Label ID="lblTotalPrice" runat="server" Text="Label"></asp:Label></td>
             </tr>
+            <tr>
+                <td class="auto-style2">&nbsp;</td>
+                <td>
+                    <asp:Button ID="OrderCheckoutbtn" runat="server" OnClick="OrderCheckoutbtn_Click" Text="Checkout" />
+                </td>
+                <td> &nbsp;</td>
+            </tr>
         </table>
         
     
