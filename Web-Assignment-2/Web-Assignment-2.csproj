@@ -72,11 +72,10 @@
     <Content Include="Home.aspx" />
     <Content Include="ItemView.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="Payment.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="Web.config" />
     <Content Include="MenuView.aspx" />
-    <Content Include="WebForm2.aspx" />
+    <Content Include="Payment.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CartView.aspx.cs">
@@ -129,12 +128,12 @@
     <Compile Include="MenuView.aspx.designer.cs">
       <DependentUpon>MenuView.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm2.aspx.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
+    <Compile Include="Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm2.aspx.designer.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
+    <Compile Include="Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
