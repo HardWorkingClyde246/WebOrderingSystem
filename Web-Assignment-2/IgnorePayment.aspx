@@ -71,11 +71,11 @@
                 <td class="auto-style1">&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style3">Delivery address:&nbsp;
+                <td class="auto-style4">Delivery address:&nbsp;
                     <asp:TextBox ID="PaymentAdLine1txt" runat="server" Width="181px"></asp:TextBox>
                 </td>
-                <td class="auto-style1">Order summary</td>
-                <td class="auto-style1"></td>
+                <td class="auto-style5">Order summary</td>
+                <td class="auto-style5"></td>
             </tr>
             <tr>
                 <td class="auto-style2">Note to rider:
@@ -103,7 +103,7 @@
             </tr>
             <tr>
                 <td class="auto-style4">
-                    <asp:Button ID="PaymentSavebtn" runat="server" Text="Save and continue" />
+                    <asp:Button ID="PaymentSavebtn" runat="server" Text="Save and continue" Height="25px" />
                 </td>
                 <td class="auto-style5">
                 </td>
