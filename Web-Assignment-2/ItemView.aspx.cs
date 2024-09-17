@@ -20,21 +20,22 @@ namespace Web_Assignment_2
                 con = new SqlConnection(constr);
                 con.Open();
 
-                // int foodID = (int)Session["food"];
-                int foodID = 1;
-                string strGetFoodName = "Select MenuItemLabel From MenuItem Where MenuItemID =" + foodID;
+                 int itemID = (int)Session["item"];
+                int catID = (int)Session["category"];
+                // int foodID = 1;
+                string strGetItemName = "Select itemLabel From MenuItem Where itemID =" + itemID + " AND categoryID =" + catID;
                 SqlCommand cmdRtr;
-                cmdRtr = new SqlCommand(strGetFoodName, con);
-                string foodName = cmdRtr.ExecuteScalar().ToString();
-                lblFoodName.Text = foodName;
+                cmdRtr = new SqlCommand(strGetItemName, con);
+                string itemName = cmdRtr.ExecuteScalar().ToString();
+                lblFoodName.Text = itemName;
 
-                string strGetFoodDesc = "Select MenuItemDescription From MenuItem Where MenuItemID =" + foodID;
-                
+                string strGetFoodDesc = "Select itemDescription From MenuItem Where itemID =" + itemID + " AND categoryID =" + catID;
+
                 cmdRtr = new SqlCommand(strGetFoodDesc, con);
-                string foodDesc = cmdRtr.ExecuteScalar().ToString();
-                lblFoodDesc.Text = foodDesc;
+                string itemDesc = cmdRtr.ExecuteScalar().ToString();
+                lblFoodDesc.Text = itemDesc;
 
-                string strGetFoodPrice = "Select Price From MenuItem Where MenuItemID =" + foodID;
+                string strGetFoodPrice = "Select price From MenuItem Where itemID =" + itemID + " AND categoryID =" + catID;
 
                 cmdRtr = new SqlCommand(strGetFoodPrice, con);
                 string foodPrice = cmdRtr.ExecuteScalar().ToString();
@@ -47,63 +48,63 @@ namespace Web_Assignment_2
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e) //add selected food to cart
-        {
-            SqlConnection con;
-            string constr = ConfigurationManager.ConnectionStrings["ConnectionStringA"].ConnectionString;
-            con = new SqlConnection(constr);
-            con.Open();
+        //protected void Button1_Click(object sender, EventArgs e) //add selected food to cart
+        //{
+        //    SqlConnection con;
+        //    string constr = ConfigurationManager.ConnectionStrings["ConnectionStringA"].ConnectionString;
+        //    con = new SqlConnection(constr);
+        //    con.Open();
 
 
 
 
-            // int orderID = (int)Session["ssOrderID"];
-            int orderID = 1; //testing stub
+        //    // int orderID = (int)Session["ssOrderID"];
+        //    int orderID = 1; //testing stub
 
 
-            // int foodID = (int)Session["food"];
-            int foodID = 1;// testing stub
-            string strGetFoodName = "Select MenuItemLabel From MenuItem Where MenuItemID =" + foodID;
-            SqlCommand cmdRtr1;
-            cmdRtr1 = new SqlCommand(strGetFoodName, con);
-            string foodName = cmdRtr1.ExecuteScalar().ToString();
+        //    // int foodID = (int)Session["food"];
+        //    int foodID = 1;// testing stub
+        //    string strGetFoodName = "Select MenuItemLabel From MenuItem Where MenuItemID =" + foodID;
+        //    SqlCommand cmdRtr1;
+        //    cmdRtr1 = new SqlCommand(strGetFoodName, con);
+        //    string foodName = cmdRtr1.ExecuteScalar().ToString();
 
-            SqlCommand cmdRtr2;
-            string strGetFoodDesc = "Select MenuItemDescription From MenuItem Where MenuItemID =" + foodID;
+        //    SqlCommand cmdRtr2;
+        //    string strGetFoodDesc = "Select MenuItemDescription From MenuItem Where MenuItemID =" + foodID;
 
-            cmdRtr2 = new SqlCommand(strGetFoodDesc, con);
-            string foodDesc = cmdRtr2.ExecuteScalar().ToString();
+        //    cmdRtr2 = new SqlCommand(strGetFoodDesc, con);
+        //    string foodDesc = cmdRtr2.ExecuteScalar().ToString();
             
 
-            string strGetFoodPrice = "Select Price From MenuItem Where MenuItemID =" + foodID;
-            SqlCommand cmdRtr3;
-            cmdRtr3 = new SqlCommand(strGetFoodPrice, con);
-            string foodPrice = cmdRtr3.ExecuteScalar().ToString();
+        //    string strGetFoodPrice = "Select Price From MenuItem Where MenuItemID =" + foodID;
+        //    SqlCommand cmdRtr3;
+        //    cmdRtr3 = new SqlCommand(strGetFoodPrice, con);
+        //    string foodPrice = cmdRtr3.ExecuteScalar().ToString();
             
-            int quantity =Int32.Parse(ddlQuantity.SelectedValue.ToString());
-            int customerID = 1; // testing stub
+        //    int quantity =Int32.Parse(ddlQuantity.SelectedValue.ToString());
+        //    int customerID = 1; // testing stub
             
-            float discount = 0;
+        //    float discount = 0;
 
           
 
-            SqlCommand cmdInsrt1; //insert into order table
-            string strInsrt = "Insert into Orders values (" +orderID + " ,"+ customerID +", " +discount +" ,NULL )";
+        //    SqlCommand cmdInsrt1; //insert into order table
+        //    string strInsrt = "Insert into Orders values (" +orderID + " ,"+ customerID +", " +discount +" ,NULL )";
 
-            cmdInsrt1 = new SqlCommand(strInsrt, con);
+        //    cmdInsrt1 = new SqlCommand(strInsrt, con);
 
-            cmdInsrt1.ExecuteNonQuery();
-
-
-            SqlCommand cmdInsrt2; //insert into orderdetails table
-            string strInsrt2 = "Insert into OrderDetails values (" +orderID +","+foodID+","+quantity+")";
-
-            cmdInsrt2 = new SqlCommand(strInsrt2, con);
-
-            cmdInsrt2.ExecuteNonQuery();
+        //    cmdInsrt1.ExecuteNonQuery();
 
 
-            con.Close();
-        }
+        //    SqlCommand cmdInsrt2; //insert into orderdetails table
+        //    string strInsrt2 = "Insert into OrderDetails values (" +orderID +","+foodID+","+quantity+")";
+
+        //    cmdInsrt2 = new SqlCommand(strInsrt2, con);
+
+        //    cmdInsrt2.ExecuteNonQuery();
+
+
+        //    con.Close();
+        //}
     }
 }

@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Reflection.Emit;
 
 namespace Web_Assignment_2
 {
@@ -33,13 +34,18 @@ namespace Web_Assignment_2
 
             //Reference the Label and TextBox.
 
-            int foodID = (item.ItemIndex + 1);
-            Session["food"] = foodID;
-            Response.Redirect("~/ItemView.aspx");
+            int itemID = (item.ItemIndex + 1);
             
+            Session["item"] = itemID;
+            Response.Redirect("~/ItemView.aspx");
+            // Get the selected row
+       
         }
 
-        
-
+        protected void GridViewCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           int catID = int.Parse(GridViewCategory.SelectedIndex.ToString());
+            Session["category"] = (catID+1);
+        }
     }
 }

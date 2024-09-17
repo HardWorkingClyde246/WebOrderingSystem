@@ -3,7 +3,7 @@
 <asp:Content ID="conten1"  ContentPlaceHolderID="ContentPlaceHolder1"  runat="server">
     
     <div>
-        <asp:GridView ID="GridViewCategory" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="CategoryID" DataSourceID="CatData" SelectedIndex="1">
+        <asp:GridView ID="GridViewCategory" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="CategoryID" DataSourceID="CatData" SelectedIndex="1" OnSelectedIndexChanged="GridViewCategory_SelectedIndexChanged">
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="CategoryID" HeaderText="CategoryID" ReadOnly="True" SortExpression="CategoryID" />
@@ -11,7 +11,7 @@
             </Columns>
         </asp:GridView>
 
-        <asp:SqlDataSource ID="CatData" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionStringA %>" SelectCommand="SELECT CategoryID, [CategoryName] FROM [Category]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="CatData" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionStringA %>" SelectCommand="SELECT [CategoryID], [CategoryName] FROM [Category]"></asp:SqlDataSource>
         
     </div>
 
@@ -19,10 +19,10 @@
             <asp:Repeater ID="RepeaterFoodList" runat="server" DataSourceID="FoodData" OnItemCommand="RepeaterFoodList_ItemCommand">
 
                 <ItemTemplate>
-                    <asp:Label ID="FoodLabel" runat="server" Text='<%# Eval("MenuItemLabel") %>' ></asp:Label>
+                    <asp:Label ID="FoodLabel" runat="server" Text='<%# Eval("itemLabel") %>' ></asp:Label>
                    
                     <br />
-                    <asp:Label ID="FoodDescription" runat="server" Text='<%# Eval("MenuItemDescription") %>' ></asp:Label>
+                    <asp:Label ID="FoodDescription" runat="server" Text='<%# Eval("itemDescription") %>' ></asp:Label>
 
 
                     <br />
@@ -36,9 +36,9 @@
             </asp:Repeater>
         
 
-        <asp:SqlDataSource ID="FoodData" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionStringA %>" SelectCommand="SELECT MenuItem.[MenuItemLabel], MenuItem.MenuItemDescription, MenuItem.Price 
-FROM Category INNER JOIN MenuItem ON Category.CategoryID = MenuItem.CategoryID
-WHERE MenuItem.CategoryID = @catID">
+        <asp:SqlDataSource ID="FoodData" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionStringA %>" SelectCommand="SELECT MenuItem.[itemLabel], MenuItem.itemDescription, MenuItem.Price 
+FROM Category INNER JOIN MenuItem ON Category.categoryID = MenuItem.categoryID
+WHERE MenuItem.categoryID = @catID">
             <SelectParameters>
                 <asp:ControlParameter ControlID="GridViewCategory" DefaultValue="1" Name="catID" PropertyName="SelectedValue" />
             </SelectParameters>
