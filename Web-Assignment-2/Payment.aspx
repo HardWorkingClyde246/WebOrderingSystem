@@ -1,3 +1,20 @@
+<<<<<<<< HEAD:Web-Assignment-2/WebForm2.aspx
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm2.aspx.cs" Inherits="Web_Assignment_2.WebForm2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+        </div>
+    </form>
+</body>
+</html>
+========
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Payment.aspx.cs" Inherits="Web_Assignment_2.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
@@ -16,7 +33,7 @@
     <p>
         <table style="width:100%;">
             <tr>
-                <td class="auto-style1">Payment</td>
+                <td class="auto-style1">--Payment--</td>
                 <td class="auto-style1"></td>
                 <td class="auto-style1"></td>
             </tr>
@@ -31,8 +48,101 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style2">Order summary:<br />
-                    <asp:Label ID="PaymentOrderSummarylbl" runat="server"></asp:Label>
+                <td class="auto-style2">--Order summary--<br />
+                    <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1">
+                        <AlternatingItemTemplate>
+                            <li style="">FoodID:
+                                <asp:Label ID="FoodIDLabel" runat="server" Text='<%# Eval("FoodID") %>' />
+                                <br />
+                                Quantity:
+                                <asp:Label ID="QuantityLabel" runat="server" Text='<%# Eval("Quantity") %>' />
+                                <br />
+                                Price:
+                                <asp:Label ID="PriceLabel" runat="server" Text='<%# Eval("Price") %>' />
+                                <br />
+                                Discount:
+                                <asp:Label ID="DiscountLabel" runat="server" Text='<%# Eval("Discount") %>' />
+                                <br />
+                            </li>
+                        </AlternatingItemTemplate>
+                        <EditItemTemplate>
+                            <li style="">FoodID:
+                                <asp:TextBox ID="FoodIDTextBox" runat="server" Text='<%# Bind("FoodID") %>' />
+                                <br />
+                                Quantity:
+                                <asp:TextBox ID="QuantityTextBox" runat="server" Text='<%# Bind("Quantity") %>' />
+                                <br />
+                                Price:
+                                <asp:TextBox ID="PriceTextBox" runat="server" Text='<%# Bind("Price") %>' />
+                                <br />
+                                Discount:
+                                <asp:TextBox ID="DiscountTextBox" runat="server" Text='<%# Bind("Discount") %>' />
+                                <br />
+                                <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
+                                <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
+                            </li>
+                        </EditItemTemplate>
+                        <EmptyDataTemplate>
+                            No data was returned.
+                        </EmptyDataTemplate>
+                        <InsertItemTemplate>
+                            <li style="">FoodID:
+                                <asp:TextBox ID="FoodIDTextBox" runat="server" Text='<%# Bind("FoodID") %>' />
+                                <br />
+                                Quantity:
+                                <asp:TextBox ID="QuantityTextBox" runat="server" Text='<%# Bind("Quantity") %>' />
+                                <br />
+                                Price:
+                                <asp:TextBox ID="PriceTextBox" runat="server" Text='<%# Bind("Price") %>' />
+                                <br />
+                                Discount:
+                                <asp:TextBox ID="DiscountTextBox" runat="server" Text='<%# Bind("Discount") %>' />
+                                <br />
+                                <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
+                                <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
+                            </li>
+                        </InsertItemTemplate>
+                        <ItemSeparatorTemplate>
+                            <br />
+                        </ItemSeparatorTemplate>
+                        <ItemTemplate>
+                            <li style="">FoodID:
+                                <asp:Label ID="FoodIDLabel" runat="server" Text='<%# Eval("FoodID") %>' />
+                                <br />
+                                Quantity:
+                                <asp:Label ID="QuantityLabel" runat="server" Text='<%# Eval("Quantity") %>' />
+                                <br />
+                                Price:
+                                <asp:Label ID="PriceLabel" runat="server" Text='<%# Eval("Price") %>' />
+                                <br />
+                                Discount:
+                                <asp:Label ID="DiscountLabel" runat="server" Text='<%# Eval("Discount") %>' />
+                                <br />
+                            </li>
+                        </ItemTemplate>
+                        <LayoutTemplate>
+                            <ul id="itemPlaceholderContainer" runat="server" style="">
+                                <li runat="server" id="itemPlaceholder" />
+                            </ul>
+                            <div style="">
+                            </div>
+                        </LayoutTemplate>
+                        <SelectedItemTemplate>
+                            <li style="">FoodID:
+                                <asp:Label ID="FoodIDLabel" runat="server" Text='<%# Eval("FoodID") %>' />
+                                <br />
+                                Quantity:
+                                <asp:Label ID="QuantityLabel" runat="server" Text='<%# Eval("Quantity") %>' />
+                                <br />
+                                Price:
+                                <asp:Label ID="PriceLabel" runat="server" Text='<%# Eval("Price") %>' />
+                                <br />
+                                Discount:
+                                <asp:Label ID="DiscountLabel" runat="server" Text='<%# Eval("Discount") %>' />
+                                <br />
+                            </li>
+                        </SelectedItemTemplate>
+                    </asp:ListView>
                     <br />
                     _______________________________________________________<br />
                     Subtotal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -63,7 +173,7 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td>Personal details<br />
+                <td>--Personal details--<br />
                     <asp:Label ID="PaymentPersonalDetaillbl" runat="server"></asp:Label>
                     <br />
                 </td>
@@ -88,7 +198,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:Button ID="PaymentPlaceOrderbtn" runat="server" Text="Place order" />
+                    <asp:Button ID="PaymentPlaceOrderbtn" runat="server" Text="Place order" OnClick="PaymentPlaceOrderbtn_Click" />
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -171,3 +281,4 @@
         </table>
     </p>
 </asp:Content>
+>>>>>>>> payment-feature-update-2:Web-Assignment-2/Payment.aspx

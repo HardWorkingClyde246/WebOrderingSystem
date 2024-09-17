@@ -4,7 +4,7 @@
 	<siteMapNode url="~/MenuView.aspx" title="MenuView"  description="">
     <siteMapNode url="~/ItemView.aspx" title="ItemView"  description="" />
     <siteMapNode url="~/CartView.aspx" title="CartView"  description="" />
-	<siteMapNode url="~/Login.aspx" title="Logout"  description="" />
+	<siteMapNode url="~/Payment.aspx" title="Payment"  description="" />
 	  
   </siteMapNode>
 </siteMap>

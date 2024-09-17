@@ -15,22 +15,31 @@ namespace Web_Assignment_2
     {
 
         /// <summary>
-        /// GridViewCart control.
+        /// lblFoodLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewCart;
+        protected global::System.Web.UI.WebControls.Label lblFoodLabel;
 
         /// <summary>
-        /// SqlDataSourceOrders control.
+        /// lblQuantity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceOrders;
+        protected global::System.Web.UI.WebControls.Label lblQuantity;
+
+        /// <summary>
+        /// lblFoodPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFoodPrice;
 
         /// <summary>
         /// lblTotalPrice control.
@@ -42,12 +51,12 @@ namespace Web_Assignment_2
         protected global::System.Web.UI.WebControls.Label lblTotalPrice;
 
         /// <summary>
-        /// btnPay control.
+        /// OrderCheckoutbtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPay;
+        protected global::System.Web.UI.WebControls.Button OrderCheckoutbtn;
     }
 }

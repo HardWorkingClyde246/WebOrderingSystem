@@ -13,5 +13,10 @@ namespace Web_Assignment_2
         {
 
         }
+
+        protected void PaymentPlaceOrderbtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ItemView.aspx");
+        }
     }
 }
