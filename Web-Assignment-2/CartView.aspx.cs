@@ -24,7 +24,7 @@ namespace Web_Assignment_2
                 //int orderID = (int)Session["ssOrderID"];
                 int orderID = 1; // stub testing
                 
-                string strGetTotalPrice = " select(MenuItem.Price * OrderDetails.Quantity)As TotalSales from OrderDetails join MenuItem on MenuItem.MenuItemID = OrderDetails.MenuItemID where OrderDetails.OrderID = " + orderID;
+                string strGetTotalPrice = " select(MenuItem.price * OrderDetails.quantity)As TotalSales from OrderDetails join MenuItem on MenuItem.itemID = OrderDetails.itemID where OrderDetails.orderID = " + orderID;
                 SqlCommand cmdRtr1;
                 cmdRtr1 = new SqlCommand(strGetTotalPrice, con);
                 string totalPrice = cmdRtr1.ExecuteScalar().ToString();

@@ -73,6 +73,8 @@ namespace Web_Assignment_2
             if (orderID == 0) { orderID = 1; }
             else { orderID++; }
 
+            
+
             int itemID = (int)Session["item"];
             int catID = (int)Session["category"];
             //int foodID = 1;// testing stub
@@ -117,6 +119,8 @@ namespace Web_Assignment_2
 
 
             con.Close();
+
+            Session["orderID"] = orderID;
         }
     }
 }
