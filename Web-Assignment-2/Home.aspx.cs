@@ -16,22 +16,7 @@ namespace Web_Assignment_2
         {
             if (!IsPostBack)
             {
-                SqlConnection con;
-                string constr = ConfigurationManager.ConnectionStrings["ConnectionStringA"].ConnectionString;
-                con = new SqlConnection(constr);
-                con.Open();
-
-                int orderID;
-                {
-                    SqlCommand cmdRtr4;
-                    string strGetLastOrderID = "SELECT TOP 1 OrderID\r\nFROM Orders\r\nORDER BY OrderID DESC;";
-                    cmdRtr4 = new SqlCommand(strGetLastOrderID, con);
-                    orderID = Int32.Parse(cmdRtr4.ExecuteScalar().ToString());
-                }
-                if (orderID == 0) { orderID = 1; }
-
-                else { orderID++; }
-                Session["ssOrderID"] = orderID;
+                
 
             }
 

@@ -37,7 +37,7 @@
                 </td>
                 <td>
                     <asp:Button ID="btnBack" runat="server" Text="Back" PostBackUrl="~/MenuView.aspx"  />
-                   <%-- <asp:Button ID="btnAdd" runat="server" Text="Add To Cart" OnClick="Button1_Click" />--%>
+                    <asp:Button ID="btnAdd" runat="server" Text="Add To Cart" OnClick="Button1_Click" />
                 </td>
             </tr>
         </table>

@@ -42,69 +42,81 @@ namespace Web_Assignment_2
                 lblFoodPrice.Text = foodPrice;
 
 
+
+
                 con.Close();
 
             }
 
         }
 
-        //protected void Button1_Click(object sender, EventArgs e) //add selected food to cart
-        //{
-        //    SqlConnection con;
-        //    string constr = ConfigurationManager.ConnectionStrings["ConnectionStringA"].ConnectionString;
-        //    con = new SqlConnection(constr);
-        //    con.Open();
+        protected void Button1_Click(object sender, EventArgs e) //add selected food to cart
+        {
+            SqlConnection con;
+            string constr = ConfigurationManager.ConnectionStrings["ConnectionStringA"].ConnectionString;
+            con = new SqlConnection(constr);
+            con.Open();
 
 
 
 
-        //    // int orderID = (int)Session["ssOrderID"];
-        //    int orderID = 1; //testing stub
+           
+            // int orderID = 1; //testing stub
 
-
-        //    // int foodID = (int)Session["food"];
-        //    int foodID = 1;// testing stub
-        //    string strGetFoodName = "Select MenuItemLabel From MenuItem Where MenuItemID =" + foodID;
-        //    SqlCommand cmdRtr1;
-        //    cmdRtr1 = new SqlCommand(strGetFoodName, con);
-        //    string foodName = cmdRtr1.ExecuteScalar().ToString();
-
-        //    SqlCommand cmdRtr2;
-        //    string strGetFoodDesc = "Select MenuItemDescription From MenuItem Where MenuItemID =" + foodID;
-
-        //    cmdRtr2 = new SqlCommand(strGetFoodDesc, con);
-        //    string foodDesc = cmdRtr2.ExecuteScalar().ToString();
+            int orderID;
             
-
-        //    string strGetFoodPrice = "Select Price From MenuItem Where MenuItemID =" + foodID;
-        //    SqlCommand cmdRtr3;
-        //    cmdRtr3 = new SqlCommand(strGetFoodPrice, con);
-        //    string foodPrice = cmdRtr3.ExecuteScalar().ToString();
+                SqlCommand cmdRtr4;
+                string strGetLastOrderID = "SELECT TOP 1 orderID\r\nFROM Orders\r\nORDER BY orderID DESC;";
+                cmdRtr4 = new SqlCommand(strGetLastOrderID, con);
+                orderID = Int32.Parse(cmdRtr4.ExecuteScalar().ToString());
             
-        //    int quantity =Int32.Parse(ddlQuantity.SelectedValue.ToString());
-        //    int customerID = 1; // testing stub
-            
-        //    float discount = 0;
+            if (orderID == 0) { orderID = 1; }
+            else { orderID++; }
 
-          
+            int itemID = (int)Session["item"];
+            int catID = (int)Session["category"];
+            //int foodID = 1;// testing stub
+            string strGetFoodName = "Select itemLabel From MenuItem Where itemID =" + itemID + " AND categoryID =" + catID;
+            SqlCommand cmdRtr1;
+            cmdRtr1 = new SqlCommand(strGetFoodName, con);
+            string foodName = cmdRtr1.ExecuteScalar().ToString();
 
-        //    SqlCommand cmdInsrt1; //insert into order table
-        //    string strInsrt = "Insert into Orders values (" +orderID + " ,"+ customerID +", " +discount +" ,NULL )";
+            SqlCommand cmdRtr2;
+            string strGetFoodDesc = "Select itemDescription From MenuItem Where itemID =" + itemID + " AND categoryID =" + catID;
 
-        //    cmdInsrt1 = new SqlCommand(strInsrt, con);
-
-        //    cmdInsrt1.ExecuteNonQuery();
-
-
-        //    SqlCommand cmdInsrt2; //insert into orderdetails table
-        //    string strInsrt2 = "Insert into OrderDetails values (" +orderID +","+foodID+","+quantity+")";
-
-        //    cmdInsrt2 = new SqlCommand(strInsrt2, con);
-
-        //    cmdInsrt2.ExecuteNonQuery();
+            cmdRtr2 = new SqlCommand(strGetFoodDesc, con);
+            string foodDesc = cmdRtr2.ExecuteScalar().ToString();
 
 
-        //    con.Close();
-        //}
+            string strGetFoodPrice = "Select Price From MenuItem Where itemID =" + itemID + " AND categoryID =" + catID;
+            SqlCommand cmdRtr3;
+            cmdRtr3 = new SqlCommand(strGetFoodPrice, con);
+            string foodPrice = cmdRtr3.ExecuteScalar().ToString();
+
+            int quantity = Int32.Parse(ddlQuantity.SelectedValue.ToString());
+            int customerID = 1; // testing stub
+
+            float discount = 0;
+
+
+
+            SqlCommand cmdInsrt1; //insert into order table
+            string strInsrt = "Insert into Orders values (" + orderID + " ," + customerID + ", " + discount + " ,NULL )";
+
+            cmdInsrt1 = new SqlCommand(strInsrt, con);
+
+            cmdInsrt1.ExecuteNonQuery();
+
+
+            SqlCommand cmdInsrt2; //insert into orderdetails table
+            string strInsrt2 = "Insert into OrderDetails values (" + orderID + "," + itemID + "," + quantity + ", "+ catID + ")";
+
+            cmdInsrt2 = new SqlCommand(strInsrt2, con);
+
+            cmdInsrt2.ExecuteNonQuery();
+
+
+            con.Close();
+        }
     }
 }
