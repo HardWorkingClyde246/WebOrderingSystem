@@ -361,3 +361,5 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /Web-Assignment-2/App_Data/Database1.mdf
+/Web-Assignment-2/App_Data/Database1.mdf
+/Web-Assignment-2/App_Data/Database1_log.ldf
