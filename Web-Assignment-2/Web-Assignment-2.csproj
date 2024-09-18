@@ -64,6 +64,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\addmenuitem.aspx" />
     <Content Include="App_Data\Database1.mdf" />
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
@@ -78,6 +79,13 @@
     <Content Include="Payment.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\addmenuitem.aspx.cs">
+      <DependentUpon>addmenuitem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\addmenuitem.aspx.designer.cs">
+      <DependentUpon>addmenuitem.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CartView.aspx.cs">
       <DependentUpon>CartView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

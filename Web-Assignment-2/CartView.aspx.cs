@@ -21,8 +21,9 @@ namespace Web_Assignment_2
                 con = new SqlConnection(constr);
                 con.Open();
 
-                //int orderID = (int)Session["ssOrderID"];
-                int orderID = 1; // stub testing
+                int orderID = (int)Session["ssOrderID"];
+                int custID = (int)Session["userID"];
+               // int orderID = 1; // stub testing
                 
                 string strGetTotalPrice = " select(MenuItem.price * OrderDetails.quantity)As TotalSales from OrderDetails join MenuItem on MenuItem.itemID = OrderDetails.itemID where OrderDetails.orderID = " + orderID;
                 SqlCommand cmdRtr1;
