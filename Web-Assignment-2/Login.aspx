@@ -29,7 +29,7 @@
             <asp:Login ID="Login2" runat="server" DestinationPageUrl="~/Home.aspx" 
                 BackColor="#EFF3FB" BorderColor="#B5C7DE" BorderPadding="4" 
                 BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" 
-                Font-Size="0.8em" ForeColor="#333333" Height="142px" Width="313px">
+                Font-Size="0.8em" ForeColor="#333333" Height="142px" Width="313px" OnAuthenticate="Login2_Authenticate">
                 
                 <InstructionTextStyle Font-Italic="True" ForeColor="Black" />
                 <LoginButtonStyle BackColor="White" BorderColor="#507CD1" BorderStyle="Solid" 
